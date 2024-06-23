@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="title">ChatApp</div>
+    <div class="settings"><i class="fa-solid fa-gear" onclick="goToSettings()"></i></div>
+
+    <div class="chat-container">
+        <div class="user-chat" onclick="goToChat()">
+
+        </div>
+    </div>
+
+    <div class="flex-container">
+
+        <div class="pet-container" onclick="goToToothless()">
+            <div class="category-title" onclick="goToToothless()">Toothless</div>
+        </div>
+        <div class="games-container" onclick="goToGames()">
+            <div class="category-title" onclick="goToGames()">Games</div>
+        </div>
+        <div class="calendar-container" onclick="goToCalendar()">
+            <div class="category-title" onclick="goToCalendar()">Calendar</div>
+        </div>
+        <div class="xxx-container" onclick="goToXxx()">
+            <div class="category-title" onclick="goToXxx()">Xxx</div>
+        </div>
+
+    </div>
+
+    <script>
+        function goToChat(){
+            window.location.href = 'chat.html';
+        }
+        function goToSettings(){
+            window.location.href = 'settings.html';
+        }
+        function goToToothless(){
+            window.location.href = 'toothless.html';
+        }
+        function goToGames(){
+            window.location.href = 'games.html';
+        }
+        function goToCalendar(){
+            window.location.href = 'calendar.html';
+        }
+        function goToXxx(){
+            window.location.href = 'xxx.html';
+        }
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedColor = localStorage.getItem('bodyBackgroundColor');
+            const savedTitleColor = localStorage.getItem('titleColor');
+            if (savedColor) {
+                document.body.style.backgroundColor = savedColor;
+            }
+            if(savedTitleColor){
+                document.querySelector('.title').style.color = savedTitleColor;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

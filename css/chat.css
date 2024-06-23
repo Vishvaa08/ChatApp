@@ -1,0 +1,226 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: 'Playwrite CO', cursive;
+    height: 100vh;
+}
+
+.header-nav{
+    width: 100%;
+    height: 85px;
+    overflow: hidden;
+}
+
+.clearfix:after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title{
+    margin-top: 20px;
+    margin-left: 40px;
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.settings{
+    margin-top: 20px;
+    margin-right: 40px;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.settings:hover{
+    color: rgb(128, 124, 124);
+    transition: 0.4s;
+    transform: rotate(45deg);
+}
+
+.left-div{
+    width: 30%;
+    height: 85%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-div-inner{
+    background-color: rgb(42, 42, 42);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    height: 85%;
+    border-radius: 20px;
+}
+
+.right-div{
+    width: 70%;
+    height: 85%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-div-inner{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    width: 96%;
+    height: 85%;
+    border-radius: 20px;
+}
+
+.right-div-inner .chat-header{
+    background-color: rgb(42, 42, 42);
+    width: 100%;
+    height: 60px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.right-div-inner .chat-content{
+    background-color: rgb(47, 47, 47);
+    width: 100%;
+    height: 338px;
+}
+
+.right-div-inner .chat-textarea{
+    background-color: rgb(42, 42, 42);
+    width: 100%;
+    height: 50px;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.profile-pic{
+    width: 60px;
+    height: 60px;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.right-div
+.right-div-inner
+.chat-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right-div
+.right-div-inner
+.chat-header
+.recipient-name{
+    width: 200px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.chat-header img{
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-left: 10px;
+    border: 3px solid black;
+}
+
+.right-div
+.right-div-inner
+.chat-textarea{
+    display: flex;
+    align-items: center;
+}
+
+.right-div
+.right-div-inner
+.chat-textarea
+.emoji-button{
+    width: 50px;
+    height: 50px;
+}
+
+.fa-face-laugh-squint{
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.fa-face-laugh-squint:hover{
+    cursor: pointer;
+}
+
+.user-message{
+    width: 700px;
+    height: 34px;
+    background-color: rgb(50, 50, 50);
+    margin-left: 20px;
+    border-radius: 15px;
+    border: none;
+    padding-left: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+input:focus{
+    outline: none;
+}
+
+.chat-content img{
+    width: 100%;
+    height: 338px;
+    opacity: 0.5;
+}
+
+@media (max-width: 940px){
+    .title{
+        margin-left: 15px;
+    }
+    .settings{
+        margin-right: 15px;
+    }
+    .left-div{
+        display: none;
+    }
+    .left-div-inner{
+        display: none;
+    }
+    .right-div{
+        width: 100%;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .right-div-inner{
+        margin-top: 10px;
+        height: 100%;
+        margin-bottom: 85px;
+    }
+    .right-div-inner .chat-header{
+        height: 70px;
+    }
+    .right-div-inner .chat-content{
+        height: 375px;
+    }
+    .right-div-inner .chat-textarea{
+        height: 60px;
+    }
+    .profile-pic{
+        height: 70px;
+    }
+    .user-message{
+        width: 290px;
+        height: 40px;
+    }
+    .chat-content img{
+        height: 375px;
+    }
+}

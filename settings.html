@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" type="text/css" href="css/settings.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="header-nav">
+        <div class="title" onclick="goToIndex()">ChatApp</div>
+    </div>
+
+    <div class="main-container">
+
+        <div class="theme-container">
+            <div class="color-box">
+                <div class="theme-box">
+                    <div class="button" onclick="changeTheme()"></div>
+                </div>
+            </div>
+            <div class="my-profile"></div>
+        </div>
+
+    </div>
+
+    <script>
+        function goToIndex() {
+            window.location.href = 'index.html';
+        }
+        function changeTheme() {
+            const button = document.querySelector('.button');
+            button.classList.toggle('right');
+            const isRight = button.classList.contains('right');
+            localStorage.setItem('buttonPosition', isRight ? 'right' : 'left');
+
+            const title = document.querySelector('.title');
+            const colorBox = document.querySelector('.color-box');
+            const myProfile = document.querySelector('.my-profile');
+
+            if (isRight) {
+                document.body.style.backgroundColor = 'white';
+                localStorage.setItem('bodyBackgroundColor', 'white');
+
+                title.style.color = 'rgb(25, 25, 25)';
+                localStorage.setItem('titleColor', 'rgb(25, 25, 25)');
+
+                colorBox.style.backgroundColor = '#D9D9D9';
+                localStorage.setItem('colorBoxColour', '#D9D9D9');
+
+                myProfile.style.backgroundColor = '#E5E5E5';
+                localStorage.setItem('myProfileColour', '#E5E5E5');
+            } else {
+                document.body.style.backgroundColor = 'rgb(25, 25, 25)';
+                localStorage.setItem('bodyBackgroundColor', 'rgb(25, 25, 25)');
+
+                title.style.color = 'white';
+                localStorage.setItem('titleColor', 'white');
+
+                colorBox.style.backgroundColor = 'rgb(42, 42, 42)';
+                localStorage.setItem('colorBoxColour', 'rgb(42, 42, 42)');
+
+                myProfile.style.backgroundColor = 'rgb(50, 50, 50)';
+                localStorage.setItem('myProfileColour', 'rgb(50, 50, 50)');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const button = document.querySelector('.button');
+            const savedPosition = localStorage.getItem('buttonPosition');
+            const savedColor = localStorage.getItem('bodyBackgroundColor');
+            const savedTitleColor = localStorage.getItem('titleColor');
+            const savedColourBoxColour = localStorage.getItem('colorBoxColour');
+            const savedMyProfileColour = localStorage.getItem('myProfileColour');
+
+            if (savedPosition === 'right') {
+                button.classList.add('right');
+            }
+
+            if (savedColor) {
+                document.body.style.backgroundColor = savedColor;
+            }
+
+            if (savedTitleColor) {
+                const title = document.querySelector('.title');
+                title.style.color = savedTitleColor;
+            }
+
+            if(savedColourBoxColour){
+                const colorBox = document.querySelector('.color-box');
+                colorBox.style.backgroundColor = savedColourBoxColour;
+            }
+
+            if(savedMyProfileColour){
+                const myProfile = document.querySelector('.my-profile');
+                myProfile.style.backgroundColor = savedMyProfileColour;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="css/chat.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="header-nav clearfix">
+        <div class="title" onclick="goToIndex()">ChatApp</div>
+        <div class="settings"><i class="fa-solid fa-gear" onclick="goToSettings()"></i></div>
+    </div>
+
+    <div class="left-div">
+        <div class="left-div-inner">
+        </div>
+    </div>
+
+    <div class="right-div">
+        <div class="right-div-inner">
+            <div class="chat-header">
+                <div class="profile-pic"><img src="images/Mikasa.png"></div>
+                <div class="recipient-name">Vishvaa Logeswaran</div>
+            </div>
+            <div class="chat-content">
+                <img src="images/Universe.png">
+            </div>
+            <div class="chat-textarea">
+                <i class="fa-solid fa-face-laugh-squint"></i>
+                <input type="text" class="user-message" placeholder="Type la broo....">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToIndex(){
+            window.location.href = 'index.html';
+        }
+        function goToSettings(){
+            window.location.href = 'settings.html';
+        }
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedColor = localStorage.getItem('bodyBackgroundColor');
+            const savedTitleColor = localStorage.getItem('titleColor');
+            const savedColourBoxColour = localStorage.getItem('colorBoxColour');
+            const savedMyProfileColour = localStorage.getItem('myProfileColour');
+
+            if (savedColor) {
+                document.body.style.backgroundColor = savedColor;
+            }
+            if(savedTitleColor){
+                document.querySelector('.title').style.color = savedTitleColor;
+                document.querySelector('.recipient-name').style.color = savedTitleColor;
+                document.querySelector('.fa-face-laugh-squint').style.color = savedTitleColor;
+                document.querySelector('.fa-gear').style.color = savedTitleColor;
+            }
+            if(savedColourBoxColour){
+                document.querySelector('.left-div-inner').style.backgroundColor = savedColourBoxColour;
+                document.querySelector('.chat-header').style.backgroundColor = savedColourBoxColour;
+                document.querySelector('.chat-textarea').style.backgroundColor = savedColourBoxColour;
+            }
+            if(savedMyProfileColour){
+                document.querySelector('.user-message').style.backgroundColor = savedMyProfileColour;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
